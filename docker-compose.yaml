@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    image: maiyakipragya/tds-deploy:25f1000347
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: example
